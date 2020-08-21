@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anch" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="401.0" style="-fx-background-color: #131022;" stylesheets="@css/fullpackstyling.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="psu.ru.esshell.controller.javaFX.UpsertVariableFormController">
+   <children>
+      <VBox layoutX="10.0" layoutY="10.0" prefHeight="579.0" prefWidth="381.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Label stylesheets="@css/fullpackstyling.css" text="Наименование" textAlignment="CENTER">
+               <VBox.margin>
+                  <Insets left="15.0" top="5.0" />
+               </VBox.margin>
+               <opaqueInsets>
+                  <Insets top="5.0" />
+               </opaqueInsets>
+            </Label>
+            <TextField fx:id="tfdName">
+               <VBox.margin>
+                  <Insets bottom="15.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </TextField>
+            <Label text="Домен">
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+            </Label>
+            <ComboBox fx:id="cbDomains" prefHeight="27.0" prefWidth="451.0" styleClass="combo-box" stylesheets="@css/fullpackstyling.css">
+               <VBox.margin>
+                  <Insets bottom="15.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </ComboBox>
+            <Label stylesheets="@css/fullpackstyling.css" text="Список допустимых значений домена">
+               <VBox.margin>
+                  <Insets left="15.0" />
+               </VBox.margin>
+            </Label>
+            <TableView fx:id="tvDomainValues" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="clmnNumber" editable="false" prefWidth="61.599947929382324" sortable="false" text="№" />
+                  <TableColumn fx:id="clmnValue" editable="false" prefWidth="309.6000518798828" sortable="false" text="Значение" />
+              </columns>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </TableView>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="btEditDomain" mnemonicParsing="false" prefHeight="37.0" prefWidth="190.0" styleClass="button5" text="Изменить домен" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btAddDomain" mnemonicParsing="false" prefHeight="37.0" prefWidth="190.0" styleClass="button5" text="Добавить домен" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </HBox>
+            <Label text="Вид переменной">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="15.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+            <RadioButton fx:id="rbtOut" mnemonicParsing="false" text="Выводимая" textFill="#ffeeee">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="15.0" />
+               </VBox.margin>
+               <toggleGroup>
+                  <ToggleGroup fx:id="kindVariable" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="rbtInp" mnemonicParsing="false" text="Запрашиваемая" textFill="#ffeeee" toggleGroup="$kindVariable">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="15.0" />
+               </VBox.margin>
+            </RadioButton>
+            <RadioButton fx:id="rbtOutInp" mnemonicParsing="false" text="Выводимо-запрашиваемая" textFill="#ffeeee" toggleGroup="$kindVariable">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="15.0" />
+               </VBox.margin>
+            </RadioButton>
+            <Label text="Текст вопроса">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="15.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="tfdQuestion" disable="true" promptText="текст вопроса">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </TextField>
+            <HBox prefHeight="23.0" prefWidth="381.0" scaleShape="false">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+               <children>
+                  <Button fx:id="btOk" mnemonicParsing="false" prefHeight="25.0" prefWidth="180.0" styleClass="button3" stylesheets="@css/fullpackstyling.css" text="Ок" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="10.0" right="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btCancel" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" styleClass="button3" stylesheets="@css/fullpackstyling.css" text="Отмена" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="5.0" right="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
